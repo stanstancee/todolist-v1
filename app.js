@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const PORT = 3000;
 const app = express();
-app.use("view engine", "ejs");
+app.set("view engine", "ejs");
 let date = new Date();
 let weekDay = date.getDay();
 let day = "";
@@ -14,7 +14,7 @@ app.get("/",function(req,res){
     else{
         day = "weekday"; 
     }
-    res.render("list",{day:day});
+    res.render("list",{thisday:day});
 });
 
 app.listen(PORT, function(){
