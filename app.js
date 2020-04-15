@@ -10,12 +10,11 @@ let day = "";
 app.get("/",function(req,res){
     if(weekDay == 6 || weekDay == 0){
         day = "weekend";
-        res.render("list",{day:day})
     }
     else{
-        day = "weekday";
-        res.render("list",{day:day})
+        day = "weekday"; 
     }
+    res.render("list",{day:day});
 });
 
 app.listen(PORT, function(){
